@@ -1,0 +1,353 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Accessibility Color Schemes */
+
+/* White and Black Mode - Black text on white background */
+body.white-black {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.white-black main,
+body.white-black section,
+body.white-black div:not(.bg-blue-600):not(.bg-green-600):not(.bg-purple-600):not(.bg-gradient-to-r),
+body.white-black p,
+body.white-black h1,
+body.white-black h2,
+body.white-black h3,
+body.white-black h4,
+body.white-black h5,
+body.white-black h6 {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.white-black a:not(button),
+body.white-black .text-blue-600,
+body.white-black .text-green-600,
+body.white-black .text-purple-600 {
+  color: #000000 !important;
+}
+
+body.white-black button,
+body.white-black .bg-blue-600,
+body.white-black .bg-green-600,
+body.white-black .bg-purple-600,
+body.white-black .bg-yellow-600,
+body.white-black .bg-red-600,
+body.white-black .bg-indigo-600 {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+body.white-black button:hover,
+body.white-black .bg-blue-600:hover,
+body.white-black .bg-green-600:hover,
+body.white-black .bg-purple-600:hover {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+/* Black and Yellow Mode - Yellow text on black background */
+body.black-yellow {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+
+body.black-yellow main,
+body.black-yellow section,
+body.black-yellow div:not(.bg-blue-600):not(.bg-green-600):not(.bg-purple-600):not(.bg-gradient-to-r),
+body.black-yellow p,
+body.black-yellow h1,
+body.black-yellow h2,
+body.black-yellow h3,
+body.black-yellow h4,
+body.black-yellow h5,
+body.black-yellow h6 {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+
+body.black-yellow a:not(button),
+body.black-yellow .text-blue-600,
+body.black-yellow .text-green-600,
+body.black-yellow .text-purple-600 {
+  color: #ffff00 !important;
+}
+
+body.black-yellow button,
+body.black-yellow .bg-blue-600,
+body.black-yellow .bg-green-600,
+body.black-yellow .bg-purple-600,
+body.black-yellow .bg-yellow-600,
+body.black-yellow .bg-red-600,
+body.black-yellow .bg-indigo-600 {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  border: 2px solid #ffff00 !important;
+}
+
+body.black-yellow button:hover,
+body.black-yellow .bg-blue-600:hover,
+body.black-yellow .bg-green-600:hover,
+body.black-yellow .bg-purple-600:hover {
+  background-color: #cccc00 !important;
+  color: #000000 !important;
+}
+
+/* Green and Black Mode - Green text on black background */
+body.green-black {
+  background-color: #000000 !important;
+  color: #00ff00 !important;
+}
+
+body.green-black main,
+body.green-black section,
+body.green-black div:not(.bg-blue-600):not(.bg-green-600):not(.bg-purple-600):not(.bg-gradient-to-r),
+body.green-black p,
+body.green-black h1,
+body.green-black h2,
+body.green-black h3,
+body.green-black h4,
+body.green-black h5,
+body.green-black h6 {
+  background-color: #000000 !important;
+  color: #00ff00 !important;
+}
+
+body.green-black a:not(button),
+body.green-black .text-blue-600,
+body.green-black .text-green-600,
+body.green-black .text-purple-600 {
+  color: #00ff00 !important;
+}
+
+body.green-black button,
+body.green-black .bg-blue-600,
+body.green-black .bg-green-600,
+body.green-black .bg-purple-600,
+body.green-black .bg-yellow-600,
+body.green-black .bg-red-600,
+body.green-black .bg-indigo-600 {
+  background-color: #00ff00 !important;
+  color: #000000 !important;
+  border: 2px solid #00ff00 !important;
+}
+
+body.green-black button:hover,
+body.green-black .bg-blue-600:hover,
+body.green-black .bg-green-600:hover,
+body.green-black .bg-purple-600:hover {
+  background-color: #00cc00 !important;
+  color: #000000 !important;
+}
+
+/* Yellow and Blue Mode - Yellow text on blue background */
+body.yellow-blue {
+  background-color: #003366 !important;
+  color: #ffff00 !important;
+}
+
+body.yellow-blue main,
+body.yellow-blue section,
+body.yellow-blue div:not(.bg-blue-600):not(.bg-green-600):not(.bg-purple-600):not(.bg-gradient-to-r),
+body.yellow-blue p,
+body.yellow-blue h1,
+body.yellow-blue h2,
+body.yellow-blue h3,
+body.yellow-blue h4,
+body.yellow-blue h5,
+body.yellow-blue h6 {
+  background-color: #003366 !important;
+  color: #ffff00 !important;
+}
+
+body.yellow-blue a:not(button),
+body.yellow-blue .text-blue-600,
+body.yellow-blue .text-green-600,
+body.yellow-blue .text-purple-600 {
+  color: #ffff00 !important;
+}
+
+body.yellow-blue button,
+body.yellow-blue .bg-blue-600,
+body.yellow-blue .bg-green-600,
+body.yellow-blue .bg-purple-600,
+body.yellow-blue .bg-yellow-600,
+body.yellow-blue .bg-red-600,
+body.yellow-blue .bg-indigo-600 {
+  background-color: #ffff00 !important;
+  color: #003366 !important;
+  border: 2px solid #ffff00 !important;
+}
+
+body.yellow-blue button:hover,
+body.yellow-blue .bg-blue-600:hover,
+body.yellow-blue .bg-green-600:hover,
+body.yellow-blue .bg-purple-600:hover {
+  background-color: #cccc00 !important;
+  color: #003366 !important;
+}
+
+/* Grayscale Mode - Monochrome display */
+body.grayscale {
+  filter: grayscale(100%) !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.grayscale main,
+body.grayscale section,
+body.grayscale div:not(.bg-blue-600):not(.bg-green-600):not(.bg-purple-600):not(.bg-gradient-to-r),
+body.grayscale p,
+body.grayscale h1,
+body.grayscale h2,
+body.grayscale h3,
+body.grayscale h4,
+body.grayscale h5,
+body.grayscale h6 {
+  filter: grayscale(100%) !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.grayscale a:not(button),
+body.grayscale .text-blue-600,
+body.grayscale .text-green-600,
+body.grayscale .text-purple-600 {
+  color: #333333 !important;
+}
+
+body.grayscale button,
+body.grayscale .bg-blue-600,
+body.grayscale .bg-green-600,
+body.grayscale .bg-purple-600,
+body.grayscale .bg-yellow-600,
+body.grayscale .bg-red-600,
+body.grayscale .bg-indigo-600 {
+  filter: grayscale(100%) !important;
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border: 2px solid #333333 !important;
+}
+
+body.grayscale button:hover,
+body.grayscale .bg-blue-600:hover,
+body.grayscale .bg-green-600:hover,
+body.grayscale .bg-purple-600:hover {
+  background-color: #555555 !important;
+  color: #ffffff !important;
+}
+
+
+
+/* Enhanced focus indicators for accessibility modes */
+body.white-black *:focus,
+body.black-yellow *:focus,
+body.green-black *:focus,
+body.yellow-blue *:focus,
+body.grayscale *:focus {
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+}
+
+/* Remove background images and gradients in accessibility modes */
+body.white-black .bg-gradient-to-r,
+body.black-yellow .bg-gradient-to-r,
+body.green-black .bg-gradient-to-r,
+body.yellow-blue .bg-gradient-to-r,
+body.grayscale .bg-gradient-to-r {
+  background-image: none !important;
+}
+
+/* Ensure proper contrast for form elements */
+body.white-black input,
+body.white-black textarea,
+body.white-black select {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+body.black-yellow input,
+body.black-yellow textarea,
+body.black-yellow select {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+}
+
+body.green-black input,
+body.green-black textarea,
+body.green-black select {
+  background-color: #000000 !important;
+  color: #00ff00 !important;
+  border: 2px solid #00ff00 !important;
+}
+
+body.yellow-blue input,
+body.yellow-blue textarea,
+body.yellow-blue select {
+  background-color: #003366 !important;
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+}
+
+body.grayscale input,
+body.grayscale textarea,
+body.grayscale select {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #333333 !important;
+}
+
+/* Ensure accessibility controls are always visible */
+.fixed.top-4.right-4 {
+  z-index: 9999 !important;
+}
+
+/* Ensure accessibility dropdown is properly styled in all modes */
+body.white-black .absolute.top-20.right-0,
+body.black-yellow .absolute.top-20.right-0,
+body.green-black .absolute.top-20.right-0,
+body.yellow-blue .absolute.top-20.right-0,
+body.grayscale .absolute.top-20.right-0 {
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid #333 !important;
+}
+
+body.white-black .absolute.top-20.right-0 *,
+body.black-yellow .absolute.top-20.right-0 *,
+body.green-black .absolute.top-20.right-0 *,
+body.yellow-blue .absolute.top-20.right-0 *,
+body.grayscale .absolute.top-20.right-0 * {
+  background-color: white !important;
+  color: black !important;
+}
