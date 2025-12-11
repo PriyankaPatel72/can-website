@@ -8,10 +8,10 @@ const footerNavigation = {
     { name: 'Contact', href: '/contact' },
   ],
   services: [
-    { name: 'Advocacy Training', href: '/services#advocacy' },
-    { name: 'Communication Workshops', href: '/services#communication' },
-    { name: 'Policy Development', href: '/services#policy' },
-    { name: 'Community Outreach', href: '/services#outreach' },
+    { name: 'Home Assistance', href: '/services#home-assistance' },
+    { name: 'Circle of Friends', href: '/services#circle-of-friends' },
+    { name: 'Support Groups', href: '/services#support-groups' },
+    { name: 'Auxiliary Support', href: '/services#auxiliary-support' },
   ],
   resources: [
     { name: 'Educational Materials', href: '/resources#education' },
@@ -87,12 +87,12 @@ export default function Footer() {
               <div className="ml-3">
                 <span className="text-xl font-bold text-white">Communication</span>
                 <br />
-                <span className="text-sm text-blue-400 font-medium">Advocacy Network</span>
+                <span className="text-sm text-blue-400 font-medium">Access Network</span>
               </div>
             </div>
             <p className="text-sm leading-6 text-gray-300">
-              Empowering communities through effective communication and advocacy. We believe that
-              every voice matters and deserves to be heard in shaping policies that affect our lives.
+              Empowering Connecticut's deaf, hard-of-hearing, and DeafBlind community through
+              comprehensive support services, advocacy, and fostering independence.
             </p>
             <div className="flex space-x-6">
               {footerNavigation.social.map((item) => (
@@ -159,9 +159,11 @@ export default function Footer() {
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">Contact Info</h3>
                 <div className="mt-6 space-y-4 text-sm text-gray-300">
-                  <p>123 Advocacy Street<br />Washington, DC 20001</p>
-                  <p>Phone: (555) 123-4567</p>
-                  <p>Email: info@cannetwork.org</p>
+                  <p>270 Farmington Ave, Suite 352<br />Farmington, CT 06032</p>
+                  <p>Phone: <a href="tel:860-232-4242" className="hover:text-white">860-232-4242</a></p>
+                  <p>Text: <a href="sms:860-232-4242" className="hover:text-white">860-232-4242</a></p>
+                  <p>VP: <a href="tel:860-232-4242" className="hover:text-white">860-232-4242</a></p>
+                  <p>Email: <a href="mailto:info@cancorp.org" className="hover:text-white">info@cancorp.org</a></p>
                 </div>
               </div>
             </div>
@@ -170,7 +172,7 @@ export default function Footer() {
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <p className="text-xs leading-5 text-gray-400">
-              &copy; 2025 Communication Advocacy Network. All rights reserved.
+              &copy; 2025 Communication Access Network. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <div className="flex space-x-6 text-xs text-gray-400">

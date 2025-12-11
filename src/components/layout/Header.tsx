@@ -9,26 +9,23 @@ const navigation = [
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services' },
   { name: 'Resources', href: '/resources' },
-  { name: 'Get Involved', href: '/get-involved' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Accessibility', href: '/accessibility' },
 ];
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">CAN</span>
               </div>
-              <div className="ml-3">
+              <div className="ml-3 hidden sm:block">
                 <span className="text-xl font-bold text-gray-900">Communication</span>
                 <br />
                 <span className="text-sm text-blue-600 font-medium">Access Network</span>
@@ -36,76 +33,58 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navigation.map((item) => {
-                const isActive = pathname === item.href;
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                      isActive
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link
-              href="/contact"
-              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
-            >
-              Get Involved
-            </Link>
+          {/* Desktop navigation */}
+          <div className="hidden md:flex md:space-x-8">
+            {navigation.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors ${
+                    isActive
+                      ? 'text-blue-600 border-b-2 border-blue-600'
+                      : 'text-gray-700 hover:text-blue-600'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="flex md:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-              aria-expanded="false"
+              type="button"
+              className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
-              {!isOpen ? (
+              {mobileMenuOpen ? (
                 <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
                 <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                   />
                 </svg>
               )}
@@ -113,34 +92,27 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+            <div className="space-y-1 pb-3 pt-2">
               {navigation.map((item) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                    className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${
                       isActive
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                        ? 'border-blue-600 bg-blue-50 text-blue-600'
+                        : 'border-transparent text-gray-700 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900'
                     }`}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                 );
               })}
-              <Link
-                href="/contact"
-                className="block w-full mt-4 bg-blue-600 text-white px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700 transition-colors duration-200 text-center"
-                onClick={() => setIsOpen(false)}
-              >
-                Get Involved
-              </Link>
             </div>
           </div>
         )}

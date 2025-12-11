@@ -1,34 +1,12 @@
-'use client';
-
 import { Metadata } from "next";
-import { useState } from "react";
 import Image from 'next/image';
 
+export const metadata: Metadata = {
+  title: "Contact Us | Communication Access Network",
+  description: "Get in touch with CAN. We're here to support you and answer your questions about our services for Connecticut's deaf, hard-of-hearing, and DeafBlind community.",
+};
+
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    organization: '',
-    subject: '',
-    message: '',
-    interest: 'general'
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You would typically send this to your backend API
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -39,8 +17,8 @@ export default function Contact() {
               Get in Touch
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-blue-100">
-              Ready to start your advocacy journey? We're here to support you every step of the way. 
-              Contact us to learn more about our programs or discuss your community's needs.
+              Ready to learn more about our services? We're here to support you every step of the way. 
+              Contact us to learn more about our programs or discuss your needs.
             </p>
           </div>
         </div>
@@ -68,322 +46,193 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Form and Info */}
+      {/* Contact Options */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-            
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Send us a message
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Fill out the form below and we'll get back to you within 24 hours.
-              </p>
-              
-              <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-                <div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium leading-6 text-gray-900">
-                      First name
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        type="text"
-                        name="firstName"
-                        id="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        required
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium leading-6 text-gray-900">
-                      Last name
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        type="text"
-                        name="lastName"
-                        id="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        required
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                    Email
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
+          <div className="mx-auto max-w-2xl text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              How Can We Help You?
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Choose the option that best fits your needs. We'll get back to you within 24 hours.
+            </p>
+          </div>
 
-                <div>
-                  <label htmlFor="organization" className="block text-sm font-medium leading-6 text-gray-900">
-                    Organization (optional)
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="organization"
-                      id="organization"
-                      value={formData.organization}
-                      onChange={handleChange}
-                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* General Contact */}
+            <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-blue-600 mx-auto mb-6">
+                  <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.955 8.955 0 01-4.126-.98L3 21l1.98-5.874A8.955 8.955 0 013 12c0-4.418 3.582-8 8-8s8 3.582 8 8z" />
+                  </svg>
                 </div>
-
-                <div>
-                  <label htmlFor="interest" className="block text-sm font-medium leading-6 text-gray-900">
-                    I'm interested in
-                  </label>
-                  <div className="mt-2">
-                    <select
-                      name="interest"
-                      id="interest"
-                      value={formData.interest}
-                      onChange={handleChange}
-                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                    >
-                      <option value="general">General Information</option>
-                      <option value="training">Advocacy Training Program</option>
-                      <option value="communication">Communication Workshop</option>
-                      <option value="policy">Policy Development Support</option>
-                      <option value="outreach">Community Outreach Program</option>
-                      <option value="speaking">Speaking Engagement</option>
-                      <option value="partnership">Partnership Opportunity</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium leading-6 text-gray-900">
-                    Subject
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="subject"
-                      id="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium leading-6 text-gray-900">
-                    Message
-                  </label>
-                  <div className="mt-2">
-                    <textarea
-                      name="message"
-                      id="message"
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                      placeholder="Tell us about your community's needs, advocacy goals, or any questions you have..."
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">General Inquiries</h3>
+                <p className="text-gray-600 mb-8 text-lg">
+                  Have questions about our services, need support, or want to learn more about CAN? 
+                  Fill out our contact form and we'll respond within 24 hours.
+                </p>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdPHfmSE6ji4brLsXY6cSGjRY3QGnOC1wQD-wcvc2qpY/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold text-lg rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-md hover:shadow-lg"
+                >
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                  Contact Us Form
+                </a>
+              </div>
             </div>
 
-            {/* Contact Information */}
-            <div className="lg:pl-8">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Contact Information
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                We're here to help you succeed in your advocacy efforts. Reach out through any of these channels.
-              </p>
-
-              <div className="mt-10 space-y-8">
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
-                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                    <p className="mt-1 text-gray-600">info@cannetwork.org</p>
-                    <p className="mt-1 text-sm text-gray-500">We respond within 24 hours</p>
-                  </div>
+            {/* Donations */}
+            <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-purple-600 mx-auto mb-6">
+                  <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Support Our Mission</h3>
+                <p className="text-gray-600 mb-8 text-lg">
+                  Your donation helps us continue providing vital services to Connecticut's deaf, 
+                  hard-of-hearing, and DeafBlind community.
+                </p>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfD43CTLAufg51_HMo80F95fKsEtiPCQXEGAY4XY5YbmU/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 py-4 bg-purple-600 text-white font-semibold text-lg rounded-lg hover:bg-purple-700 transition-colors duration-300 shadow-md hover:shadow-lg"
+                >
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                  Donate Now
+                </a>
+              </div>
+            </div>
 
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
-                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-                    <p className="mt-1 text-gray-600">(555) 123-4567</p>
-                    <p className="mt-1 text-sm text-gray-500">Monday - Friday, 9 AM - 6 PM EST</p>
-                  </div>
+            {/* Volunteer Application */}
+            <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-green-600 mx-auto mb-6">
+                  <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
                 </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Wanna Volunteer?</h3>
+                <p className="text-gray-600 mb-8 text-lg">
+                  Join our team of dedicated volunteers and make a difference in our community. 
+                  We have opportunities for people of all backgrounds and skill levels.
+                </p>
+                <a
+                  href="/get-involved"
+                  className="inline-flex items-center px-8 py-4 bg-green-600 text-white font-semibold text-lg rounded-lg hover:bg-green-700 transition-colors duration-300 shadow-md hover:shadow-lg"
+                >
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
 
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
-                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Main Office</h3>
-                    <p className="mt-1 text-gray-600">
-                      123 Advocacy Street<br />
-                      Washington, DC 20001
-                    </p>
-                    <p className="mt-1 text-sm text-gray-500">Visit by appointment</p>
-                  </div>
-                </div>
+          {/* Additional Info */}
+          <div className="mt-12 text-center">
+            <p className="text-gray-600">
+              Forms will open in a new window. If you have trouble accessing the forms, 
+              please contact us directly using the information below.
+            </p>
+          </div>
+        </div>
+      </section>
 
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
-                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Office Hours</h3>
-                    <p className="mt-1 text-gray-600">
-                      Monday - Friday: 9:00 AM - 6:00 PM EST<br />
-                      Saturday: 10:00 AM - 2:00 PM EST<br />
-                      Sunday: Closed
-                    </p>
-                  </div>
+      {/* Contact Information */}
+      <section className="py-16 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Other Ways to Reach Us
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Prefer to contact us directly? Here are additional ways to get in touch.
+            </p>
+          </div>
+
+          <div className="mx-auto max-w-4xl">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+              <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-sm">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 mb-4">
+                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                 </div>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Email</h3>
+                <p className="text-gray-600">
+                  <a href="mailto:info@cancorp.org" className="text-blue-600 hover:text-blue-800 underline">
+                    info@cancorp.org
+                  </a>
+                </p>
+                <p className="mt-2 text-sm text-gray-500">We respond within 24 hours</p>
               </div>
 
-              {/* Regional Offices */}
-              <div className="mt-12">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">Regional Offices</h3>
-                <div className="space-y-4 text-sm">
-                  <div>
-                    <h4 className="font-medium text-gray-900">West Coast</h4>
-                    <p className="text-gray-600">San Francisco, CA • (555) 234-5678</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Midwest</h4>
-                    <p className="text-gray-600">Chicago, IL • (555) 345-6789</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Southeast</h4>
-                    <p className="text-gray-600">Atlanta, GA • (555) 456-7890</p>
-                  </div>
+              <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-sm">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 mb-4">
+                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
                 </div>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Phone</h3>
+                <p className="text-gray-600 mb-1">
+                  : <a href="sms:860-232-4242" className="text-blue-600 hover:text-blue-800 underline">
+                    860-232-4242
+                  </a>
+                </p>
+                <p className="text-gray-600">
+                  VP: <a href="tel:860-599-9490" className="text-blue-600 hover:text-blue-800 underline">
+                    860-232-4242
+                  </a>
+                </p>
+                <p className="mt-2 text-sm text-gray-500">Monday - Friday, 9 AM - 5 PM EST</p>
+              </div>
+
+              <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-sm">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 mb-4">
+                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Main Office</h3>
+                <p className="text-gray-600">
+                  151 New Park Avenue, Suite 101<br />
+                Hartford, CT 06106
+                </p>
+                <p className="mt-2 text-sm text-gray-500">Visit by appointment</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Actions */}
-      <section className="bg-gray-50 py-16 sm:py-24">
+      {/* Office Hours */}
+      <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Other Ways to Connect
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Choose the option that works best for your schedule and needs.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-              
-              <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200 text-center">
-                <div className="mx-auto h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                  <svg className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a4 4 0 118 0v4m-4 0h5a1 1 0 011 1v3H6V8a1 1 0 011-1h1z" />
+            <div className="bg-blue-50 rounded-lg p-8 border border-blue-200">
+              <div className="flex items-center justify-center mb-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
+                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  Schedule a Consultation
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Book a free 30-minute consultation to discuss your community's advocacy needs and goals.
-                </p>
-                <button className="w-full rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500">
-                  Book Consultation
-                </button>
               </div>
-
-              <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200 text-center">
-                <div className="mx-auto h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-                  <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h8V4l4 4z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  Join Our Community
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Connect with other advocates in our online community for ongoing support and collaboration.
-                </p>
-                <button className="w-full rounded-md bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500">
-                  Join Community
-                </button>
-              </div>
-
-              <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200 text-center">
-                <div className="mx-auto h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                  <svg className="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  Request Information
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Get detailed information about our programs, services, and how we can support your advocacy goals.
-                </p>
-                <button className="w-full rounded-md bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500">
-                  Request Info
-                </button>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Office Hours</h3>
+              <div className="text-gray-700">
+                <p className="mb-2"><strong>Monday - Friday:</strong> 9:00 AM - 5:00 PM EST</p>
+                <p><strong>Saturday - Sunday:</strong> Closed</p>
               </div>
             </div>
           </div>
