@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -22,13 +23,19 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">CAN</span>
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+                <Image
+                  src="/logoo.webp"
+                  alt="CAN Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
               </div>
               <div className="ml-3 hidden sm:block">
                 <span className="text-xl font-bold text-gray-900">Communication</span>
                 <br />
-                <span className="text-sm text-blue-600 font-medium">Access Network</span>
+                <span className="text-sm text-blue-600 font-medium">Advocacy Network</span>
               </div>
             </Link>
           </div>

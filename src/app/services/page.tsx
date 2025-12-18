@@ -54,7 +54,7 @@ export default function Services() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-6 left-6 text-white">
-                <h3 className="text-2xl font-bold mb-2">ASL Interpreter Services</h3>
+                <h3 className="text-2xl font-bold mb-2">Communication access at all events</h3>
                 <p className="text-lg opacity-90">Professional interpretation by native ASL users</p>
               </div>
             </div>

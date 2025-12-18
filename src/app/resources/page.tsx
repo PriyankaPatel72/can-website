@@ -720,42 +720,6 @@ export default function Resources() {
           </div>
         </div>
       </section>
-
-      {/* Newsletter Signup */}
-      <section className="bg-blue-600 py-16 sm:py-24" id="news">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Stay Updated
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-200">
-              Get the latest resources, research, and advocacy news delivered to your inbox monthly.
-            </p>
-            <form className="mt-8 sm:flex sm:max-w-md sm:mx-auto">
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                type="email"
-                name="email-address"
-                id="email-address"
-                autoComplete="email"
-                required
-                className="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white sm:w-64 sm:text-sm sm:leading-6"
-                placeholder="Enter your email"
-              />
-              <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
-                <button
-                  type="submit"
-                  className="flex w-full items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

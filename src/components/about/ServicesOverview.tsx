@@ -18,8 +18,8 @@ export default function ServicesOverview() {
     },
     {
       icon: "🤝",
-      title: "Consumer Support Group",
-      description: "Peer support groups providing a safe space for sharing experiences, resources, and mutual support among community members.",
+      title: "Guided Assistance Program",
+      description: "Helping DeafBlind or hard of hearing blind individuals with daily tasks, appointments, and community access for greater independence.",
       bgColor: "bg-purple-600",
       textColor: "text-purple-600",
       hoverColor: "hover:bg-purple-700"

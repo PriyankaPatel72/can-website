@@ -5,16 +5,13 @@ export default function MissionSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            At CAN, we are dedicated to supporting individuals with DeafBlindness, vision loss, and hearing loss by fostering independence, inclusivity, and community connection. Our programs are designed to address unique needs and help build a brighter future for all.
+            Empowering DeafBlind and Hard of Hearing–Blind adults in Connecticut. We provide advocacy and culturally sensitive support services that promote dignity, independence, and meaningful connections within their community.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission Statement</h3>
-            <p className="text-gray-700 mb-6">
-              Our mission is to empower individuals with disabilities by providing tailored assistance, fostering community, and promoting independence.
-            </p>
+          
             
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Core Values</h3>
             <ul className="space-y-3">

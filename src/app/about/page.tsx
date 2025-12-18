@@ -112,7 +112,7 @@ export default function About() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-2">•</span>
-                    <span className="font-semibold">Blackford Foundation</span>
+                    <span className="font-semibold">Eugene G. & Margaret M. Blackford Memorial Fund fbo Blind, Bank of America, N.A., Co-Trustee</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-2">•</span>

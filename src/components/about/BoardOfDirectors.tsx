@@ -47,7 +47,7 @@ const boardMembers: BoardMember[] = [
   {
     name: "Sue Pedersen",
     position: "Board Member",
-    image: "/photots/sue-pedersen.jpg",
+    image: "/Sue.jpeg",
     color: "purple-600",
     description: "Retired Director of Communication Access Network, INC. (CAN). Certified Deaf Interpreter and retired Communication Officer of CT Commission on the Deaf and Hearing Impaired."
   },
@@ -88,13 +88,13 @@ export default function BoardOfDirectors() {
           </p>
           <div className="bg-blue-100 rounded-lg p-6 max-w-4xl mx-auto">
             <p className="text-gray-700">
-              <strong>Board Meetings:</strong> Meetings occur at CAN's office in Hartford, CT. Please contact Jennifer White-Jackson at{" "}
-              <a href="mailto:JWhite-Jackson@cancorp.org" className="text-blue-600 hover:text-blue-800 underline">
-                JWhite-Jackson@cancorp.org
+              <strong>Board Meetings:</strong> Meetings occur at CAN's office in Hartford, CT. Please contact at{" "}
+              <a href="mailto:info@cancorp.org" className="text-blue-600 hover:text-blue-800 underline">
+                info@cancorp.org
               </a>{" "}
               or call{" "}
               <a href="tel:860-566-9488" className="text-blue-600 hover:text-blue-800 underline">
-                860-566-9488
+                860-566-9489
               </a>{" "}
               if you would like to attend a board meeting.
             </p>

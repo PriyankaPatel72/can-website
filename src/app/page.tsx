@@ -11,7 +11,7 @@ export default function Home() {
             Communication Advocacy Network 
           </h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Empowering Connecticut's deaf, hard-of-hearing, and DeafBlind community through comprehensive support services, advocacy, and fostering independence.
+            Empowering Connecticut's hard-of-hearing, and DeafBlind community advocacy, and communication.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -37,47 +37,47 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
         <div className="flex-shrink-0">
           <Image
-            src="/SilverTransparancy.jpg"
-            alt="Candid Silver Transparency Seal 2025"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
+        src="/Platinum.jpeg"
+        alt="Candid Platinum Transparency Seal 2025"
+        width={200}
+        height={200}
+        className="rounded-lg shadow-lg"
           />
         </div>
         <div className="text-center md:text-left max-w-2xl">
           <h3 className="text-2xl font-bold text-gray-900 mb-3">
-            We've earned our Silver Seal of Transparency with Candid!
+        We've earned our Platinum Seal of Transparency with Candid!
           </h3>
           <p className="text-gray-800 leading-relaxed mb-4">
-            We earned a <strong>2025 Candid Silver Seal of Transparency!</strong> Keep up with 
-            our work in the community using the link below. It will give you unlimited access. 
-            We rely on our profile to gather support; it enables funders and donors to find us 
-            and learn about our impact.
+        We earned a <strong>2025 Candid Platinum Seal of Transparency!</strong> Keep up with 
+        our work in the community using the link below. It will give you unlimited access. 
+        We rely on our profile to gather support; it enables funders and donors to find us 
+        and learn about our impact.
           </p>
           <p className="text-gray-800 mb-6">
-            Get updates on our impact through our <strong>Nonprofit Profile</strong>. We'll keep our 
-            profile up to date so you can see what your donations help us accomplish.
+        Get updates on our impact through our <strong>Nonprofit Profile</strong>. We'll keep our 
+        profile up to date so you can see what your donations help us accomplish.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a
+        <a
           href="https://app.candid.org/profile/7515047/communication-advocacy-networkcorp/?pkId=5f922927-2c8b-43cc-bdfe-46522ee49774&isActive=true"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300"
+        >
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+          View Our Candid Profile
+            </a>
+            <Link
+          href="/about"
+          className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg border border-blue-600 hover:bg-blue-50 transition-colors duration-300"
             >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                  View Our Candid Profile
-                </a>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg border border-blue-600 hover:bg-blue-50 transition-colors duration-300"
-                >
-                  Learn More About CAN
-                </Link>
-              </div>
-            </div>
+          Learn More About CAN
+            </Link>
+          </div>
+        </div>
           </div>
         </div>
       </section>
@@ -102,18 +102,6 @@ export default function Home() {
             </div>
             
             <div className="text-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Circle of Friends Events</h3>
-              <p className="text-gray-800">
-                Community building events that bring people together to foster connections, support, and friendship within our community.
-              </p>
-            </div>
-            
-            <div className="text-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -130,17 +118,30 @@ export default function Home() {
 
     {/* Video Section */}
     <section className="py-8 bg-white">
-      <div className="max-w-md mx-auto px-4">
-        <div className="rounded-lg overflow-hidden shadow-lg">
-      <video
-        className="w-full object-cover"
-        style={{ objectPosition: '50% 30%' }}
-        controls
-        preload="metadata"
-      >
-        <source src="/photots/HomePageVideo.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <video
+              className="w-full object-cover"
+              style={{ objectPosition: '50% 30%' }}
+              controls
+              preload="metadata"
+            >
+              <source src="/photots/HomePageVideo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <video
+              className="w-full object-cover"
+              style={{ objectPosition: '50% 30%' }}
+              controls
+              preload="metadata"
+            >
+              <source src="/Home page video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
     </section>
@@ -175,7 +176,7 @@ export default function Home() {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="text-purple-700 font-bold mb-2">September 2025</div>
+              <div className="text-purple-700 font-bold mb-2">August 18, 2026</div>
               <h3 className="text-xl font-bold mb-3">CAN 20th Anniversary</h3>
               <p className="text-gray-800 mb-4">
                 Celebrate two decades of service with us at our special anniversary event featuring community stories and achievements.

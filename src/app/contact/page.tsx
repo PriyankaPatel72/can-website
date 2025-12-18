@@ -100,7 +100,7 @@ export default function Contact() {
                   hard-of-hearing, and DeafBlind community.
                 </p>
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfD43CTLAufg51_HMo80F95fKsEtiPCQXEGAY4XY5YbmU/viewform"
+                  href="https://forms.office.com/Pages/ResponsePage.aspx?id=VURMdmUWgkuIXBckt5UbKmP00iEOFplOhFBFXUEMjydUNTBFOUM1MktUQVA5TFhJWTRWVERIOFpXVS4u"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-8 py-4 bg-purple-600 text-white font-semibold text-lg rounded-lg hover:bg-purple-700 transition-colors duration-300 shadow-md hover:shadow-lg"
