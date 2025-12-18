@@ -11,7 +11,7 @@ export default function Home() {
             Communication Advocacy Network 
           </h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Empowering Connecticut's hard-of-hearing, and DeafBlind community advocacy, and communication.
+            Empowering Connecticut's hard-of-hearing, Blind, and DeafBlind community through advocacy, and communication.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
