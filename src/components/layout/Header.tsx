@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import AccessibilityControls from '@/components/ui/AccessibilityControls';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -41,27 +42,31 @@ export default function Header() {
           </div>
 
           {/* Desktop navigation */}
-          <div className="hidden md:flex md:space-x-8">
-            {navigation.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors ${
-                    isActive
-                      ? 'text-blue-600 border-b-2 border-blue-600'
-                      : 'text-gray-700 hover:text-blue-600'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              );
-            })}
+          <div className="hidden md:flex md:items-center md:space-x-6">
+            <div className="md:flex md:space-x-8">
+              {navigation.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors ${
+                      isActive
+                        ? 'text-blue-600 border-b-2 border-blue-600'
+                        : 'text-gray-700 hover:text-blue-600'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
+            </div>
+            <AccessibilityControls inNavbar />
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
+            <AccessibilityControls inNavbar />
             <button
               type="button"
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"

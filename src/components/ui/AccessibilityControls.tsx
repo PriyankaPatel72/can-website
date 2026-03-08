@@ -4,7 +4,11 @@ import { useState, useEffect } from 'react';
 
 type ContrastMode = 'default' | 'white-black' | 'black-yellow' | 'green-black' | 'yellow-blue' | 'grayscale';
 
-export default function AccessibilityControls() {
+interface AccessibilityControlsProps {
+  inNavbar?: boolean;
+}
+
+export default function AccessibilityControls({ inNavbar = false }: AccessibilityControlsProps) {
   const [contrastMode, setContrastMode] = useState<ContrastMode>('default');
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,24 +43,39 @@ export default function AccessibilityControls() {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-[9999]">
+    <div
+      className={inNavbar ? 'relative z-50' : 'fixed top-4 right-4 z-[9999]'}
+      data-a11y-controls
+    >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 border-2 border-white transform hover:scale-110 transition-all duration-200"
+        className={inNavbar
+          ? 'inline-flex items-center gap-1.5 bg-blue-600 text-white px-3 py-2 rounded-full shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 border border-white transition-all duration-200'
+          : 'bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 border-2 border-white transform hover:scale-110 transition-all duration-200'}
         aria-label="Accessibility Color Schemes"
         aria-expanded={isOpen}
+        aria-controls="a11y-color-scheme-panel"
         title="Click to change color scheme"
       >
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className={inNavbar ? 'w-5 h-5' : 'w-8 h-8'} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2M9 3h2a2 2 0 012 2v12a4 4 0 01-4 4H7m2-16v16" />
         </svg>
-        <div className="absolute -bottom-1 -right-1 bg-yellow-400 text-black text-xs px-1 rounded-full font-bold">
-          A11Y
-        </div>
+        {inNavbar && <span className="text-xs font-semibold">Accessibility</span>}
+        {!inNavbar && (
+          <div className="absolute -bottom-1 -right-1 bg-yellow-400 text-black text-xs px-1 rounded-full font-bold">
+            A11Y
+          </div>
+        )}
       </button>
 
       {isOpen && (
-        <div className="absolute top-20 right-0 bg-white rounded-lg shadow-2xl border-2 border-gray-300 p-6 min-w-80 max-w-sm">
+        <div
+          id="a11y-color-scheme-panel"
+          data-a11y-panel
+          className={inNavbar
+            ? 'absolute top-14 right-0 bg-white rounded-lg shadow-2xl border-2 border-gray-300 p-4 min-w-72 max-w-sm'
+            : 'absolute top-20 right-0 bg-white rounded-lg shadow-2xl border-2 border-gray-300 p-6 min-w-80 max-w-sm'}
+        >
           <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
             <span className="mr-2">🎨</span>
             Color Schemes
@@ -67,6 +86,8 @@ export default function AccessibilityControls() {
             
             <button
               onClick={() => handleContrastChange('default')}
+              data-a11y-option
+              aria-pressed={contrastMode === 'default'}
               className={`w-full text-left p-3 rounded border ${
                 contrastMode === 'default' 
                   ? 'border-blue-500 bg-blue-50' 
@@ -79,6 +100,8 @@ export default function AccessibilityControls() {
 
             <button
               onClick={() => handleContrastChange('white-black')}
+              data-a11y-option
+              aria-pressed={contrastMode === 'white-black'}
               className={`w-full text-left p-3 rounded border ${
                 contrastMode === 'white-black' 
                   ? 'border-blue-500 bg-blue-50' 
@@ -91,6 +114,8 @@ export default function AccessibilityControls() {
 
             <button
               onClick={() => handleContrastChange('black-yellow')}
+              data-a11y-option
+              aria-pressed={contrastMode === 'black-yellow'}
               className={`w-full text-left p-3 rounded border ${
                 contrastMode === 'black-yellow' 
                   ? 'border-blue-500 bg-blue-50' 
@@ -103,6 +128,8 @@ export default function AccessibilityControls() {
 
             <button
               onClick={() => handleContrastChange('green-black')}
+              data-a11y-option
+              aria-pressed={contrastMode === 'green-black'}
               className={`w-full text-left p-3 rounded border ${
                 contrastMode === 'green-black' 
                   ? 'border-blue-500 bg-blue-50' 
@@ -115,6 +142,8 @@ export default function AccessibilityControls() {
 
             <button
               onClick={() => handleContrastChange('yellow-blue')}
+              data-a11y-option
+              aria-pressed={contrastMode === 'yellow-blue'}
               className={`w-full text-left p-3 rounded border ${
                 contrastMode === 'yellow-blue' 
                   ? 'border-blue-500 bg-blue-50' 
@@ -127,6 +156,8 @@ export default function AccessibilityControls() {
 
             <button
               onClick={() => handleContrastChange('grayscale')}
+              data-a11y-option
+              aria-pressed={contrastMode === 'grayscale'}
               className={`w-full text-left p-3 rounded border ${
                 contrastMode === 'grayscale' 
                   ? 'border-blue-500 bg-blue-50' 
